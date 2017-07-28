@@ -1,0 +1,24 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<script src="/webjars/jquery/3.1.1/jquery.min.js"></script>
+<script src="/webjars/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<title>List All Files Page</title>
+<link rel="stylesheet"
+	href="/webjars/bootstrap/3.3.7/css/bootstrap.min.css" />
+</head>
+<body>
+	<div class="container">
+		<h2>List All Uploaded Files</h2>
+		<div>
+			<ul>
+				<li th:each="file : ${files}"><a th:href="${file}"
+					th:text="${file}" /></li>
+			</ul>
+		</div>
+		<div>
+			<h3 th:text="${totalFiles}" />
+			<a href="/">Home</a>
+		</div>
+	</div>
+</body>
+</html>
